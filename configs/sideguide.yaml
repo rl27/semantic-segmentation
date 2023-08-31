@@ -36,8 +36,8 @@ SCHEDULER:
   
 
 EVAL:
-  MODEL_PATH    : 'checkpoints/pretrained/ddrnet/ddrnet_23slim_city.pth'     # trained model file path
-  IMAGE_SIZE    : [1024, 1024]                            # evaluation image size in (h, w)                       
+  MODEL_PATH    : 'DDRNet_DDRNet-23slim_SideGuide.onnx'     # trained model file path
+  IMAGE_SIZE    : [480, 480]                            # evaluation image size in (h, w)                       
   MSF: 
     ENABLE      : false                                   # multi-scale and flip evaluation  
     FLIP        : true                                    # use flip in evaluation  
@@ -45,7 +45,7 @@ EVAL:
 
 
 TEST:
-  MODEL_PATH    : 'checkpoints/pretrained/ddrnet/ddrnet_23slim_city.pth'    # trained model file path
-  FILE          : 'assests/ade'                    # filename or foldername 
-  IMAGE_SIZE    : [1024, 1024]                            # inference image size in (h, w)
+  MODEL_PATH    : 'DDRNet_DDRNet-23slim_SideGuide.pth'    # trained model file path
+  FILE          : 'assests/test'                    # filename or foldername 
+  IMAGE_SIZE    : [480, 480]                            # inference image size in (h, w)
   OVERLAY       : true                                    # save the overlay result (image_alpha+label_alpha)

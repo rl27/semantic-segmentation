@@ -44,7 +44,8 @@ class SemSeg:
         console.print(f"Original Image Size > [red]{H}x{W}[/red]")
         # scale the short side of image to target size
         scale_factor = self.size[0] / min(H, W)
-        nH, nW = round(H*scale_factor), round(W*scale_factor)
+        # nH, nW = round(H*scale_factor), round(W*scale_factor)
+        nH, nW = self.size[0], self.size[1]
         # make it divisible by model stride
         nH, nW = int(math.ceil(nH / 32)) * 32, int(math.ceil(nW / 32)) * 32
         console.print(f"Inference Image Size > [red]{nH}x{nW}[/red]")
