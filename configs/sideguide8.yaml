@@ -7,7 +7,7 @@ MODEL:
   PRETRAINED    : 'ddrnet_pretrained.pth'              # backbone model's weight 
 
 DATASET:
-  NAME          : SideGuide                                          # dataset name to be trained with (camvid, cityscapes, ade20k)
+  NAME          : SideGuide8                                          # dataset name to be trained with (camvid, cityscapes, ade20k)
   ROOT          : 'data/sideguide'                                   # dataset root path
   IGNORE_LABEL  : 255
 

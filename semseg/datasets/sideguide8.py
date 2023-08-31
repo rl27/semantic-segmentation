@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import Tuple
 
 
-class SideGuide(Dataset):
+class SideGuide8(Dataset):
     CLASSES = [
-        'background', 'sidewalk_blocks', 'sidewalk_cement', 'sidewalk_urethane', 'sidewalk_asphalt', 'sidewalk_soil_stone', 'sidewalk_damaged', 'sidewalk_other', 'braille_guide_blocks_normal', 'braille_guide_blocks_damaged', 'roadway_normal', 'roadway_crosswalk', 'alley_normal', 'alley_crosswalk', 'alley_speed_bump', 'alley_damaged', 'bike_lane_normal', 'caution_zone_stairs', 'caution_zone_manhole', 'caution_zone_tree_zone', 'caution_zone_grating', 'caution_zone_repair_zone'
+        'background', 'sidewalk', 'braille_guide_blocks', 'crosswalk', 'road', 'bike_lane', 'stairs', 'caution_zone'
     ]
-    PALETTE = torch.tensor([[0, 0, 0], [0, 0, 255], [217, 217, 217], [198, 89, 17], [128, 128, 128], [255, 230, 153], [55, 86, 35], [110, 168, 70], [255, 255, 0], [128, 96, 0], [255, 128, 255], [255, 0, 255], [230, 170, 255], [208, 88, 255], [138, 60, 200], [88, 38, 128], [255, 155, 155], [255, 192, 0], [255, 0, 0], [0, 255, 0], [255, 128, 0], [105, 105, 255]])
+    PALETTE = torch.tensor([[0, 0, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255], [255, 128, 255], [255, 155, 155], [255, 192, 0], [255, 0, 0]])
     
     def __init__(self, root: str, split: str = 'train', transform = None) -> None:
         super().__init__()
@@ -32,7 +32,7 @@ class SideGuide(Dataset):
     
     def __getitem__(self, index: int) -> Tuple[Tensor, Tensor]:
         img_path = str(self.files[index])
-        lbl_path = str(self.files[index]).replace('images', 'labels22').replace('.jpg', '.png')
+        lbl_path = str(self.files[index]).replace('images', 'labels8').replace('.jpg', '.png')
 
         image = io.read_image(img_path, io.ImageReadMode.RGB)
         label = io.read_image(lbl_path)

@@ -17,6 +17,7 @@ from .ibugmask import iBugMask
 from .celebamaskhq import CelebAMaskHQ
 from .facesynthetics import FaceSynthetics
 from .sideguide import SideGuide
+from .sideguide8 import SideGuide8
 
 
 __all__ = [
@@ -39,5 +40,6 @@ __all__ = [
     'iBugMask',
     'CelebAMaskHQ',
     'FaceSynthetics',
-    'SideGuide'
+    'SideGuide',
+    'SideGuide8'
 ]
